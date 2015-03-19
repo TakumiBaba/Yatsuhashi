@@ -1,6 +1,8 @@
 Yatsuhashi
 ---
 
+work in progress
+
 I eat yatsuhashi now, so code name is yatsuhashi.
 
 this app is photo upload application.
