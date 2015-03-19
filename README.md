@@ -13,3 +13,4 @@ if you have this app, photo is automatically uploaded to Gyazo.com
 - install.
 - put your Gyazo app AccessToken
 - (optional) if you want to upload photos always, check [Auto upload] true
+- take a photos...
