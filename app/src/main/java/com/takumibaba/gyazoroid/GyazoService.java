@@ -37,7 +37,7 @@ public class GyazoService extends IntentService{
      * @param name Used to name the worker thread, important only for debugging.
      */
     private static final String TAG = "GyazoService";
-    private Handler mHandler = null;
+    private Handler mHandler = new Handler();
     public GyazoService(){
         super(TAG);
     }
@@ -51,7 +51,6 @@ public class GyazoService extends IntentService{
 
     @Override
     protected void onHandleIntent(final Intent intent) {
-        mHandler = new Handler();
         mContext = getApplicationContext();
         mUri = (Uri) intent.getParcelableExtra("data");
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
@@ -72,10 +71,8 @@ public class GyazoService extends IntentService{
                             PixelFormat.TRANSLUCENT);
                     params.gravity = Gravity.CENTER;
 
-//                    final Button button = new Button(mContext);
                     final ImageButton button = new ImageButton(mContext);
                     button.setImageResource(R.drawable.gyazo);
-//                    button.setImageAlpha(80);
                     button.setOnClickListener(clickListener);
 
                     manager.addView(button.getRootView(), params);
